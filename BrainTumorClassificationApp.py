@@ -2,8 +2,6 @@ import streamlit as st
 import numpy as np
 import joblib
 import cv2
-import io
-from PIL import Image
 from utils.preprocessing import preprocess_image
 from utils.features import feature_extraction
 
