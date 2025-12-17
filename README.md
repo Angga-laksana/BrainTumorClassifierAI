@@ -43,30 +43,25 @@ Replace the image paths with your own screenshots.
 ## 🏗️ Project Structure
 ```bash
 BrainMRITumorClassification/
+├── demo/
+│ ├── home.png # app appearance initially
+│ ├── prediction1.png # app appearance after prediction
+│ ├── prediction2.png # app appearance after prediction
+│ └── full_demonstration.mp4 # demonstration video
 ├── model/
 │ └── model_bundle.pkl # Trained model and scaler
 ├── notebook/
 │ └── ComputerVision_Project.ipynb # Notebook train and explore model
-├── data/
-│ └── README.md # About dataset
-├── outputs/
-│ ├── plots/
-│ │ ├── CNN/ # CNN History Train Plot
-│ │ └── YOLO/ # YOLO History Train Plot
-│ └── models/
-│   └── best.pt # Trained YOLOv8 Model
-├── report/ # Report about the application
-├── src/
+├── report/ 
+│ └── Brain Tumor Classification on Low Resolution Images.pdf # Report about the application
+├── utils/
 │ ├── __init__.py # To ensure this is python package
-│ ├── data_preprocess.py # Preprocess data scripts
-│ ├── evaluate.py # Evaluation model scripts
-│ ├── model.py # Model creation scripts
-│ ├── train.py # Model trains scripts
-│ └── main.py # The main entry point
-├── requirements.txt # All Dependencies
+│ ├── features.py # features function scripts
+│ └── preprocessing.py # preprocess model scripts
+├── BrainTumorClassificationApp.py # Main Streamlit Application
+├── LICENSE
 ├── README.md # Project Documentation
-├── .gitignore # Ignored files
-└── LICENSE
+└── requirements.txt # All Dependencies
 ```
 
 ---
