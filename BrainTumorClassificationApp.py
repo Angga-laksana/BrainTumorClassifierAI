@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import joblib
+import cv2
 import io
 from PIL import Image
 from utils.preprocessing import preprocess_image
@@ -44,8 +45,8 @@ if process:
     else:
         # Read image
         try:
-            file_bytes = uploaded.read()
-            image = Image.open(io.BytesIO(file_bytes)).convert("RGB")
+            file_bytes = np.asarray(bytearray(uploaded.read()), dtype=np.uint8)
+            image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
         except Exception as e:
             st.error("Unable to read the uploaded file as an image.")
             st.stop()
@@ -53,7 +54,7 @@ if process:
         with col1:
             # Show input image
             st.subheader("📷 Input Image")
-            st.image(image, use_container_width=True)
+            st.image(image, use_container_width=True, channels="BGR")
         with col2:
             # Preprocess and extract features
             with st.spinner("Preprocessing and extracting features..."):
